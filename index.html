@@ -3,106 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Preview Card</title>
+    <title>Product Preview</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f8f8f8;
         }
-
-        .product-card {
-            background-color: #fff;
-            width: 320px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-card .content {
+        .product-container {
+            width: 350px;
             padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-
-        .product-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin: 0;
-            color: #333;
+        .main-product img {
+            width: 100%;
+            border-radius: 10px;
         }
-
-        .product-price {
-            font-size: 18px;
-            color: #e74c3c;
+        .sub-products {
+            display: flex;
+            justify-content: center;
             margin-top: 10px;
         }
-
-        .product-description {
-            font-size: 14px;
-            color: #7f8c8d;
-            margin: 10px 0;
-            line-height: 1.5;
-        }
-
-        .product-card .action-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
+        .sub-products img {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            transition: 0.3s;
         }
-
-        .product-card .action-btn:hover {
-            background-color: #2980b9;
+        .sub-products img:hover {
+            border: 2px solid #007bff;
         }
-
-        .action-btn:active {
-            background-color: #21618c;
-        }
-
     </style>
 </head>
 <body>
-
-    <div class="product-card">
-        <img src="https://media.wired.com/photos/66abec9ccb172c2e5de763bf/master/w_960,c_limit/Edifier-Stax-Spirit-S5-Headphones-Offwhite-Background-SOURCE-Amazon.jpg" alt="Wireless Headphones">
-        <div class="content">
-            <div class="product-title">Wireless Headphones</div>
-            <div class="product-price">$129.99</div>
-            <div class="product-description">
-                Experience premium sound quality with noise cancellation and comfortable padding for long listening sessions. Perfect for music lovers.
-            </div>
-            <button class="action-btn" onclick="viewDetails()">View Details</button>
+    <div class="product-container">
+        <div class="main-product">
+            <img id="mainImage" src="../preview/img/product.jpg" alt="Main Product"height="200px"width="50"onclick="changeImage('../preview/img/shopping.webp')">
+        </div>
+        <div class="sub-products">
+            <img src="../preview/img/product1.webp" alt="Sub Product 1" onclick="changeImage('../preview/img/product1.jpg')">
+            <img src="../preview/img/product2.jpeg" alt="Sub Product 2" onclick="changeImage('../preview/img/product2.jpg')">
+            <img src="../preview/img/product3.jpg" alt="Sub Product 3" onclick="changeImage('../preview/img/product3.jpg')">
         </div>
     </div>
 
     <script>
-        function viewDetails() {
-            alert("Redirecting to product details page...");
-            
+        function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = preview/img/shopping.webp;
         }
     </script>
-
 </body>
 </html>
